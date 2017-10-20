@@ -38,4 +38,4 @@ Based in https://github.com/micooz/docker-lnmp
 
 MIT
 
-  [1]: docs/architecture.png
+  [1]: docker/docs/architecture.png
