@@ -8,11 +8,13 @@ I want to share my ideas and designs about Web-Deploying using Docker with you.
 
 ![architecture][1]
 
+Note: The local ports may differ.
+
 The whole app is divided into three Containers:
 
 1. Nginx is running in `Nginx` Container, which handles requests and makes responses.
 2. PHP or PHP-FPM is put in `PHP-FPM` Container, it retrieves php scripts from host, interprets, executes then responses to Nginx. If necessary, it will connect to `MySQL` as well.
-3. MySQL lies in `MySQL` Container, 
+3. MySQL lies in `MySQL` Container,
 
 Our app scripts are located on host, you can edit files directly without rebuilding/restarting whole images/containers.
 
@@ -22,17 +24,13 @@ At first, you should have had [Docker](https://docs.docker.com) and [Docker Comp
 
 Without building images one by one, you can make use of `docker-compose` and simply issue:
 
-    $ docker-compose up
-
-For more operations to containers, please refer to:
-
-    $ docker-compose --help
+    $ ./start-dev.sh
 
 Check out your https://\<docker-host\> and have fun :beer:
 
 ### Contributors
 
-Based in https://github.com/micooz/docker-lnmp 
+Based in https://github.com/micooz/docker-lnmp
 
 ### License
 

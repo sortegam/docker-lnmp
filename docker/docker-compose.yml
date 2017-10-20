@@ -2,11 +2,11 @@
 nginx:
   image: nginx:latest
   ports:
-    - "80:80"
-    - "443:443"
+    - "8080:80"
+    - "8443:443"
   volumes:
     # app
-    - ./app/src:/usr/share/nginx/html
+    - ../src:/usr/share/nginx/html
     # nginx configs
     - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     - ./nginx/conf.d/:/etc/nginx/conf.d/:ro
@@ -22,7 +22,7 @@ fpm:
   ports:
     - "9000"
   volumes:
-    - ./app/src:/usr/share/nginx/html
+    - ../src:/usr/share/nginx/html
     # Your php.ini
     - ./php-fpm/php.ini-production:/usr/local/etc/php/php.ini:ro
   # environment:
